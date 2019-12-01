@@ -1,3 +1,9 @@
+const path = require('path');
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   configureWebpack: {
     externals: {
@@ -7,12 +13,17 @@ module.exports = {
       'element-ui': 'window.Element',
     },
   },
+  css: {
+    // 启用 CSS modules
+		modules: true,
+  },
   devServer: {
     hot: false,
     inline: false,
     // https: true,
     disableHostCheck: true,
   },
+
   pages: {
     index: {
       // 入口
@@ -26,6 +37,15 @@ module.exports = {
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
       chunks: ['chunk-vendors', 'chunk-common', 'index']
+    }
+  },
+
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        resolve('./src/assets/less/global.less')
+      ]
     }
   }
 };

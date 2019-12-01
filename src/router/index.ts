@@ -1,14 +1,22 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import VueRouter, { RouteConfig } from 'vue-router';
+import defaultLayout from '@/layout/Default.vue';
+const Home = () => import('@/views/home/Home.vue');
 
 Vue.use(VueRouter);
 
-const routes = [
+const routes: RouteConfig[] = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'defaultLayout',
+    component: defaultLayout,
+    children: [
+      {
+        path: '/home',
+        name: 'Home',
+        component: Home,
+      },
+    ],
   },
   {
     path: '/about',
