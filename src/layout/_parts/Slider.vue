@@ -1,10 +1,14 @@
 <template>
   <el-menu
     class="_menu"
+    :default-active="menusUrl[menus[0].resky]"
     :router="true"
     :unique-opened="true"
     :collapse="isCollapse"
-    :collapse-transition="false">
+    :collapse-transition="false"
+    :background-color="clolrConf.asiderBgColor"
+    :text-color="clolrConf.asiderTextColor"
+    :active-text-color="clolrConf.asiderActiveTextColor">
     <template  v-for="(item, key) in menus">
       <el-submenu v-if="item.suns" :key="key">
         <template slot="title">
@@ -29,7 +33,9 @@
 import { Prop, Component, Vue } from 'vue-property-decorator';
 import { menusUrl, menusIcon} from './menus-link';
 import { IMenus } from '../types';
-// import style from './c.less';
+// use typings-for-css-modules-loader and webpack ;
+// import config from '@/assets/less/config.less';
+const config = require('../../assets/less/config.less');
 
 @Component
 export default class Aside extends Vue {
@@ -48,11 +54,20 @@ export default class Aside extends Vue {
     required: false,
     default: [],
   }) private menus!: [];
+
+  get clolrConf() {
+    return config;
+  }
+
+  private mounted() {
+    console.log(config);
+  }
 }
 </script>
 
 <style lang="less" scoped>
 ._menu {
   border: none;
+  min-height: 100vh;
 }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <el-container class="_lay">
-    <el-scrollbar wrap-class="scrollbar-wrapper" :style="isCollapse ? 'width: 70px' : 'width: 200px'">
-    <!-- <el-aside> -->
+    <el-scrollbar wrap-class="scrollbar-wrapper" :style="isCollapse ? 'min-width: 64px' : 'min-width: 200px'">
+    <el-aside class="aside" :style="isCollapse ? 'width: 64px' : 'width: 200px'">
       <Slider
+        class="slider"
         :isCollapse="isCollapse"
         :menus="Menus"></Slider>
-    <!-- </el-aside> -->
+    </el-aside>
     </el-scrollbar>
     <el-container>
       <el-header>
@@ -15,7 +16,6 @@
           @open="handleOpenSlider" />
       </el-header>
       <el-main>
-        11111
         <router-view/>
       </el-main>
     </el-container>
@@ -57,9 +57,8 @@ export default class DefaultLayout extends Vue {
 ._lay {
   width: 100%;
   height: 100%;
-  //border: rebeccapurple solid 1px;
-  overflow: hidden;
   .el-scrollbar {
+    overflow-x: hidden;
     & /deep/ .el-scrollbar__wrap {
       overflow-x: hidden;
     }

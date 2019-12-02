@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import defaultLayout from '@/layout/Default.vue';
 const Home = () => import('@/views/home/Home.vue');
+const Console = () => import('@/views/console/Console.vue');
+const Notfound = () => import('@/layout/NotFound.vue');
+
 
 Vue.use(VueRouter);
 
@@ -11,6 +14,11 @@ const routes: RouteConfig[] = [
     name: 'defaultLayout',
     component: defaultLayout,
     children: [
+      {
+        path: '/',
+        name: 'Console',
+        component: Console,
+      },
       {
         path: '/home',
         name: 'Home',
@@ -25,6 +33,11 @@ const routes: RouteConfig[] = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+  {
+    path: '*',
+    name: 'Notfound',
+    component: Notfound,
   },
 ];
 

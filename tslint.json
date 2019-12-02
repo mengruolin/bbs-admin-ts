@@ -15,6 +15,7 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [true, "single"],
-    "no-console": "off"
+    "no-console": false,
+    "no-var-requires": false
   }
 }

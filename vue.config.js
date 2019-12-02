@@ -5,6 +5,9 @@ function resolve(dir) {
 }
 
 module.exports = {
+  css: {
+    requireModuleExtension: false
+  },
   configureWebpack: {
     externals: {
       vue: 'window.Vue',
@@ -12,10 +15,6 @@ module.exports = {
       'vue-router': 'window.VueRouter',
       'element-ui': 'window.Element',
     },
-  },
-  css: {
-    // 启用 CSS modules
-		modules: true,
   },
   devServer: {
     hot: false,
@@ -44,7 +43,8 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        resolve('./src/assets/less/global.less')
+        //resolve('./src/assets/less/global.less'),
+        resolve('./src/assets/less/main.less')
       ]
     }
   }
