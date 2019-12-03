@@ -114,6 +114,7 @@ export default class Heard extends Vue {
       margin-top: 5px;
       overflow: hidden;
       border-radius: 50%;
+      cursor: pointer;
       //border: @headerFontColor solid 0.5px;
       .avatar {
         height: 100%;
