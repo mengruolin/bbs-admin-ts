@@ -27,7 +27,7 @@
       <el-breadcrumb-item>活动列表</el-breadcrumb-item>
       <el-breadcrumb-item>活动详情</el-breadcrumb-item>
     </el-breadcrumb> -->
-    <div class="nav-tag">
+    <!-- <div class="nav-tag">
       <el-tag 
         type="success"
         :closable="true"
@@ -35,7 +35,7 @@
         v-for="(item, k) of navList"
         :key="k"
         @close="handleCloseTag(k)"><router-link :to="item.navUrl">{{ item.label }}</router-link></el-tag>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -79,10 +79,10 @@ export default class Heard extends Vue {
 </script>
 
 <style lang="less" scoped>
-@header-width: 50px;
+@headerHeight: 50px;
 ._header {
   width: 100%;
-  height: @header-width;
+  height: @headerHeight;
   border-bottom: @headerBorder;
   background-color: @headerBgColor;
   color: @headerFontColor;
@@ -107,7 +107,7 @@ export default class Heard extends Vue {
     padding-right: 20px;
     font-size: 16px;
     text-align: right;
-    line-height: @header-width;
+    line-height: @headerHeight;
     .avatar-swiper {
       width: 40px;
       height: 40px;

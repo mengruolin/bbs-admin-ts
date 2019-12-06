@@ -63,5 +63,11 @@ export default class DefaultLayout extends Vue {
       overflow-x: hidden;
     }
   }
+  .el-main {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+  }
 }
 </style>
