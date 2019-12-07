@@ -14,6 +14,7 @@ module.exports = {
       vuex: 'window.Vuex',
       'vue-router': 'window.VueRouter',
       'element-ui': 'window.Element',
+      'roughViz': 'window.roughViz',
     },
   },
   devServer: {
