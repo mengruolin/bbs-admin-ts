@@ -35,8 +35,10 @@ export default class Console extends Vue {
   height: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, @gridWidth);
-  grid-template-rows: repeat(3, @gridWidth);
+  // grid-template-columns: repeat(3, @gridWidth);
+  // grid-template-rows: repeat(3, @gridWidth);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
   .item {
