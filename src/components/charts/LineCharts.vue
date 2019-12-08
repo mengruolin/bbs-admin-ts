@@ -4,10 +4,10 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-//import roughViz from 'roughViz';
+// import roughViz from 'roughViz';
 
 @Component
-export default class LineCharts extends Vue{
+export default class LineCharts extends Vue {
   public name: string  = 'lineCharts';
   // @Prop({
   //   type: Array,

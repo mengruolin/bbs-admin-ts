@@ -1,6 +1,9 @@
 <template>
   <el-card class="pagingCard">
     <div class="_header">
+      <div class="_title">
+        {{ title }}
+      </div>
       <div class="_btn" v-if="slotNames.length >= 1">
         <span @click="handleChangePage('prev')" class="c-clickIcon"><i class="el-icon-arrow-up"></i></span>
         <span @click="handleChangePage('next')" class="c-ml10 c-clickIcon"><i class="el-icon-arrow-down"></i></span>
@@ -11,6 +14,7 @@
       ref="carousel"
       :direction="direction"
       :autoplay="false"
+      indicator-position="none"
       height="100%"
       arrow="never"
       @change="isChangePage">
@@ -24,7 +28,6 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { Carousel } from 'element-ui';
-// import element from 'element-ui'
 
 @Component
 export default class PagingCard extends Vue {
@@ -36,6 +39,12 @@ export default class PagingCard extends Vue {
     default: 'horizontal',
     required: false,
     }) private direction!: string;
+
+  @Prop({
+    type: String,
+    default: () => '',
+    required: false,
+  }) private title!: string;
 
   @Prop({
     type: Array,
@@ -70,6 +79,7 @@ export default class PagingCard extends Vue {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  border: #cccccc solid 1px;
   // padding: 30px 5px 5px 5px;
   & /deep/ .el-card__body {
     padding: 0 0;
@@ -84,15 +94,24 @@ export default class PagingCard extends Vue {
     //background: red;
     width: 100%;
     height: 50px;
-    border-bottom: coral solid 1px;
+    border-bottom: #cccccc solid 1px;
+    display: flex;
+    ._title {
+      flex: 1;
+      overflow: hidden;
+      padding-left: 20px;
+      font-size: 18px;
+      line-height: 50px;
+      color: #cccccc;
+    }
     ._btn {
       max-width: 100px;
       line-height: 50px;
-      position: absolute;
-      right: 0px;
+      // position: absolute;
+      // right: 0px;
       padding-right: 20px;
       font-size: 20px;
-      color:coral;
+      color:#cccccc;
     }
   }
   ._pages {

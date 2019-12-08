@@ -1,0 +1,3 @@
+interface GlobalStates {
+  statistics: any[];
+}

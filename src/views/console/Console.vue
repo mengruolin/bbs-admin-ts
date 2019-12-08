@@ -1,22 +1,25 @@
 <template>
   <div class="_console">
-    <div shadow="hover" class="item card-1">
+    <div class="item card-1">
       <show-case></show-case>
     </div>
-    <div shadow="hover" class="item card-2">2</div>
-    <div shadow="hover" class="item card-3">3</div>
-    <div shadow="hover" class="item card-4">4</div>
-    <div shadow="hover" class="item card-5">5</div>
+    <div class="item card-2">2</div>
+    <div class="item card-3">
+      <private-message></private-message>
+    </div>
+    <div class="item card-4">4</div>
+    <div class="item card-5">5</div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ShowCase from './_parts/ShowCase.vue';
-
+import PrivateMessage from './_parts/PrivateMessage.vue';
 @Component({
   components: {
     ShowCase,
+    PrivateMessage,
   },
 })
 export default class Console extends Vue {
@@ -35,8 +38,6 @@ export default class Console extends Vue {
   height: 100%;
   overflow: hidden;
   display: grid;
-  // grid-template-columns: repeat(3, @gridWidth);
-  // grid-template-rows: repeat(3, @gridWidth);
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 20px;
@@ -54,7 +55,7 @@ export default class Console extends Vue {
       // background-color: aqua;
   }
   .card-2 {
-    background-color:black;
+    background-color:rgb(236, 146, 146);
   }
   .card-3 {
     // grid-column-start: 2;
@@ -64,10 +65,10 @@ export default class Console extends Vue {
     background-color: #fff;
   }
   .card-4 {
-    background-color: blue;
+    background-color: rgb(133, 168, 129);
   }
   .card-5 {
-    background-color: brown;
+    background-color: rgb(64, 132, 163);
   }
 }
 </style>
