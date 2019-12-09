@@ -1,5 +1,5 @@
 export const menusUrl: StrObject = {
-  ['abc']: '/',
+  ['abc']: '/console',
   ['acd']: '/home',
 };
 

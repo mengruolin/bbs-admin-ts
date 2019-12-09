@@ -4,7 +4,6 @@ import router from './router';
 import store from './store';
 import '@/components/install.ts';
 import '@/assets/less/main.less';
-// import * as echarts from 'echarts';
 
 Vue.config.productionTip = false;
 

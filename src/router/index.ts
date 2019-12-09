@@ -15,13 +15,13 @@ const routes: RouteConfig[] = [
     component: defaultLayout,
     children: [
       {
-        path: '/',
-        name: 'Console',
+        path: '/console',
+        name: 'console',
         component: Console,
       },
       {
         path: '/home',
-        name: 'Home',
+        name: 'home',
         component: Home,
       },
     ],

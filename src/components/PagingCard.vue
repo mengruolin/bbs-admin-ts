@@ -96,6 +96,7 @@ export default class PagingCard extends Vue {
     height: 50px;
     border-bottom: #cccccc solid 1px;
     display: flex;
+    z-index: 1;
     ._title {
       flex: 1;
       overflow: hidden;

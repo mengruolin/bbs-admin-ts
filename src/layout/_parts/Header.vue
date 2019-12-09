@@ -21,21 +21,6 @@
         </el-dropdown>
       </el-col>
     </el-row>
-    <!-- <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-    </el-breadcrumb> -->
-    <!-- <div class="nav-tag">
-      <el-tag 
-        type="success"
-        :closable="true"
-        :disable-transitions="false"
-        v-for="(item, k) of navList"
-        :key="k"
-        @close="handleCloseTag(k)"><router-link :to="item.navUrl">{{ item.label }}</router-link></el-tag>
-    </div> -->
   </div>
 </template>
 
@@ -72,7 +57,6 @@ export default class Heard extends Vue {
   }
 
   private handleCloseTag(index: number): void {
-    console.log(index);
     this.navList.splice(index, 1);
   }
 }
@@ -125,18 +109,6 @@ export default class Heard extends Vue {
           font-size: 24px;
         }
       }
-    }
-  }
-}
-.nav-tag {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 10px;
-  overflow: hidden;
-  .el-tag {
-    margin-right: 10px;
-    a {
-      color: black;
     }
   }
 }

@@ -58,10 +58,6 @@ export default class Aside extends Vue {
   get clolrConf() {
     return config;
   }
-
-  private mounted() {
-    console.log(config);
-  }
 }
 </script>
 
