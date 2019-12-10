@@ -46,6 +46,7 @@ export default class RotateCard extends Vue {
 
   .flipper {
     transition: 1.5s;
+    transition-delay: .5s;
     transform-style: preserve-3d;
     position: relative;
     width: 100%;

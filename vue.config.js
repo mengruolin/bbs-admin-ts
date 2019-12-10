@@ -8,6 +8,20 @@ module.exports = {
   css: {
     requireModuleExtension: false
   },
+  chainWebpack: config => {
+    config.module.rules.delete("svg");
+    config.module
+      .rule('svg-sprite-loader')
+      .test(/\.svg$/)
+      .include
+      .add(resolve('src/assets/svg/')) //处理svg目录
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+  },
   configureWebpack: {
     externals: {
       vue: 'window.Vue',

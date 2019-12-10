@@ -7,8 +7,9 @@
     <div class="item card-3">
       <private-message></private-message>
     </div>
-    <div class="item card-4">4</div>
-    <div class="item card-5">5</div>
+    <div class="item card-4">
+      <charts-panel></charts-panel>
+    </div>
   </div>
 </template>
 
@@ -16,10 +17,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import ShowCase from './_parts/ShowCase.vue';
 import PrivateMessage from './_parts/PrivateMessage.vue';
+import ChartsPanel from './_parts/ChartsPanel.vue';
+
 @Component({
   components: {
     ShowCase,
     PrivateMessage,
+    ChartsPanel,
   },
 })
 export default class Console extends Vue {
@@ -51,7 +55,7 @@ export default class Console extends Vue {
       grid-column-start: 1;
       grid-column-end: 3;
       grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row-end: 2;
       // background-color: aqua;
   }
   .card-2 {
@@ -66,9 +70,10 @@ export default class Console extends Vue {
   }
   .card-4 {
     background-color: rgb(133, 168, 129);
-  }
-  .card-5 {
-    background-color: rgb(64, 132, 163);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
   }
 }
 </style>
