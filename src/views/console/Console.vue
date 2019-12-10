@@ -3,7 +3,9 @@
     <div class="item card-1">
       <show-case></show-case>
     </div>
-    <div class="item card-2">2</div>
+    <div class="item card-2">
+      <console-info></console-info>
+    </div>
     <div class="item card-3">
       <private-message></private-message>
     </div>
@@ -18,12 +20,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import ShowCase from './_parts/ShowCase.vue';
 import PrivateMessage from './_parts/PrivateMessage.vue';
 import ChartsPanel from './_parts/ChartsPanel.vue';
+import ConsoleInfo from './_parts/ConsoleInfo.vue';
 
 @Component({
   components: {
     ShowCase,
     PrivateMessage,
     ChartsPanel,
+    ConsoleInfo,
   },
 })
 export default class Console extends Vue {
@@ -59,17 +63,17 @@ export default class Console extends Vue {
       // background-color: aqua;
   }
   .card-2 {
-    background-color:rgb(236, 146, 146);
+    // background-color:rgb(236, 146, 146);
   }
   .card-3 {
     // grid-column-start: 2;
     // grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 4;
-    background-color: #fff;
+    // background-color: #fff;
   }
   .card-4 {
-    background-color: rgb(133, 168, 129);
+    // background-color: rgb(133, 168, 129);
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;

@@ -24,14 +24,14 @@ export default class LineCharts extends Mixins(minixCharts) {
   private initCharts(): void {
     this.chart = echarts.init(document.getElementById(this.id) as HTMLDivElement);
     this.chart.setOption({
-      backgroundColor: '#394056',
+      backgroundColor: '#ffffff',
       title: {
         top: 20,
-        text: 'Requests',
+        text: '用户分析',
         textStyle: {
           fontWeight: 'normal',
           fontSize: 16,
-          color: '#F1F1F3',
+          color: '#000000',
         },
         left: '1%',
       },
@@ -48,7 +48,7 @@ export default class LineCharts extends Mixins(minixCharts) {
         right: '4%',
         textStyle: {
           fontSize: 12,
-          color: '#F1F1F3',
+          color: '#000000',
         },
       },
       grid: {

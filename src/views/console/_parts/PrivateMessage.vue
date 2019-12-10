@@ -1,5 +1,6 @@
 <template>
-  <paging-card :slotNames="slotNames" title="站内消息">
+  <paging-card :slotNames="slotNames" title="😊😊panpel">
+    <template slot=""></template>
   </paging-card>
 </template>
 
