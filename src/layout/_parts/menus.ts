@@ -2,7 +2,7 @@ import { IMenus } from '../types';
 
 const menus: IMenus = {
   id: 0,
-  reskey: 'aab',
+  reskey: 'e7isbi78il8bq5h56t843g',
   resourcesType: 0,
   resourcesName: '用户管理后台',
   resourceUrl: '',
@@ -10,7 +10,7 @@ const menus: IMenus = {
   suns: [
     {
       id: 1,
-      reskey: 'abc',
+      reskey: 'e7isbi78il8bq5h56t843g',
       resourcesType: 0,
       resourcesName: '控制台',
       resourceUrl: 'console',
@@ -18,15 +18,25 @@ const menus: IMenus = {
     },
     {
       id: 1,
-      reskey: 'abc',
+      reskey: '62e5iotude8c78of9pql88',
       resourcesType: 0,
       resourcesName: 'bbs管理',
       resourceUrl: 'console',
       own: 0,
+      suns: [
+        {
+          id: 1,
+          reskey: 'acd',
+          resourcesType: 0,
+          resourcesName: '帖子管理',
+          resourceUrl: 'console',
+          own: 0,
+        },
+      ],
     },
     {
       id: 1,
-      reskey: 'abc',
+      reskey: '3592ul476doe0rph9msdoo',
       resourcesType: 0,
       resourcesName: 'blog管理',
       resourceUrl: 'console',
@@ -34,7 +44,7 @@ const menus: IMenus = {
     },
     {
       id: 1,
-      reskey: 'abc',
+      reskey: 's2t2uctr658fulibp45qmo',
       resourcesType: 0,
       resourcesName: '用户管理',
       resourceUrl: 'console',
@@ -42,7 +52,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: 'md81fj3ghk8joo41j6uvl8',
       resourcesType: 0,
       resourcesName: '用户反馈',
       resourceUrl: 'other',
@@ -50,7 +60,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: 'ev8shoj3abg7g236jm9ghg',
       resourcesType: 0,
       resourcesName: '信息管理',
       resourceUrl: 'other',
@@ -58,7 +68,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: 'etasf7puqbo_k193ej5jha',
       resourcesType: 0,
       resourcesName: '广告管理',
       resourceUrl: 'other',
@@ -66,7 +76,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: '8ptufrd89f8q8g3bl72q7g',
       resourcesType: 0,
       resourcesName: '系统设置',
       resourceUrl: 'other',
@@ -74,7 +84,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: 'oh23aqbjj3gg31uf4ikgho',
       resourcesType: 0,
       resourcesName: '权限设置',
       resourceUrl: 'other',
@@ -82,7 +92,7 @@ const menus: IMenus = {
     },
     {
       id: 2,
-      reskey: 'acd',
+      reskey: '89fb9pdm5tggk356pkdm7o',
       resourcesType: 0,
       resourcesName: '其它',
       resourceUrl: 'other',

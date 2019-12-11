@@ -12,18 +12,19 @@
     <template  v-for="(item, key) in menus">
       <el-submenu v-if="item.suns" :key="key">
         <template slot="title">
-          <i :class="menusIcon[item.reskey]"></i>
-          <span>{{ item.resourcesName }}</span>
+          <i class="icon-font" v-html="menusIcon[item.reskey]"></i>
+          <span class="c-ml10">{{ item.resourcesName }}</span>
         </template>
-        <el-menu-item v-for="(lists, i) of item.suns" :key="i" :index="menusUrl[lists.resky] || '/'">
-          <i :class="menusIcon[item.reskey]"></i>
-          <span slot="title">{{ item.resourcesName }}</span>
+        <el-menu-item v-for="(lists, i) of item.suns" :key="i" :index="menusUrl[lists.reskey] || '/'">
+        
+          <!-- <i :class="menusIcon[item.reskey]"></i> -->
+          <span slot="title">{{ lists.resourcesName }}<i class="el-icon-star-off c-ml10"></i></span>
         </el-menu-item>
       </el-submenu>
 
       <el-menu-item v-else :index="menusUrl[item.reskey] || '/'" :key="key">
-        <i :class="menusIcon[item.reskey]"></i>
-        <span slot="title">{{ item.resourcesName }}</span>
+        <i class="icon-font" v-html="menusIcon[item.reskey]"></i>
+        <span slot="title" class="c-ml10">{{ item.resourcesName }}</span>
       </el-menu-item>
     </template>
   </el-menu>
