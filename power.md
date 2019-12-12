@@ -10,8 +10,8 @@
 ## 权限设置 `oh23aqbjj3gg31uf4ikgho`
 ## 其它 `89fb9pdm5tggk356pkdm7o`
 ## 帖子管理 `8n8knvtbnlglao4elg9u18`
-## `shufi1ivmuou63dj6egpv8`
-## `g4hdao6tkco3k7plplu1oo`
+## query管理 `shufi1ivmuou63dj6egpv8`
+## 问答管理 `g4hdao6tkco3k7plplu1oo`
 ## `23vl9prme8g4he4fn499go`
 ## `7cfsiirhg3oo8kdd69srf8`
 ## `vr4e9pnjg1oej7on1euq3o`

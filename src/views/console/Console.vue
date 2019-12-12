@@ -1,5 +1,5 @@
 <template>
-  <div class="_console">
+  <Loading-page class="_console">
     <div class="item card-1">
       <show-case></show-case>
     </div>
@@ -12,7 +12,7 @@
     <div class="item card-4">
       <charts-panel></charts-panel>
     </div>
-  </div>
+  </Loading-page>
 </template>
 
 <script lang="ts">
@@ -21,6 +21,7 @@ import ShowCase from './_parts/ShowCase.vue';
 import PrivateMessage from './_parts/PrivateMessage.vue';
 import ChartsPanel from './_parts/ChartsPanel.vue';
 import ConsoleInfo from './_parts/ConsoleInfo.vue';
+import { Action } from 'vuex-class';
 
 @Component({
   components: {
@@ -32,8 +33,11 @@ import ConsoleInfo from './_parts/ConsoleInfo.vue';
 })
 export default class Console extends Vue {
   public name: string = 'Console';
+  @Action('showLoading') private showLoading!: () => void;
 
-  // private mounted(): void {}
+  private mounted(): void {
+    this.showLoading();
+  }
 }
 </script>
 

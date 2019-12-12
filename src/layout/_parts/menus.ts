@@ -18,6 +18,24 @@ const menus: IMenus = {
     },
     {
       id: 1,
+      reskey: 'shufi1ivmuou63dj6egpv8',
+      resourcesType: 0,
+      resourcesName: 'query管理',
+      resourceUrl: 'console',
+      own: 1,
+      suns: [
+        {
+          id: 1,
+          reskey: 'g4hdao6tkco3k7plplu1oo',
+          resourcesType: 0,
+          resourcesName: '问答管理',
+          resourceUrl: 'console',
+          own: 0,
+        },
+      ],
+    },
+    {
+      id: 1,
       reskey: '62e5iotude8c78of9pql88',
       resourcesType: 0,
       resourcesName: 'bbs管理',

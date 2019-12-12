@@ -9,6 +9,8 @@ export const menusUrl: StrObject = {
   '8ptufrd89f8q8g3bl72q7g': '/console',
   'oh23aqbjj3gg31uf4ikgho': '/console',
   '89fb9pdm5tggk356pkdm7o': '/console',
+  'shufi1ivmuou63dj6egpv8': '/queryConfig',
+  'g4hdao6tkco3k7plplu1oo': '/qaSons',
 };
 
 export const menusIcon = {
@@ -22,4 +24,5 @@ export const menusIcon = {
   '8ptufrd89f8q8g3bl72q7g': '&#xe611;',
   'oh23aqbjj3gg31uf4ikgho': '&#xe61a;',
   '89fb9pdm5tggk356pkdm7o': '&#xe626;',
+  'shufi1ivmuou63dj6egpv8': '&#xe6c0;',
 };

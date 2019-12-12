@@ -69,6 +69,7 @@ export default class Heard extends Vue {
   height: @headerHeight;
   border-bottom: @headerBorder;
   background-color: @headerBgColor;
+  box-shadow: @headerBoxShadow;
   color: @headerFontColor;
   padding: 0 0;
   .el-col {
