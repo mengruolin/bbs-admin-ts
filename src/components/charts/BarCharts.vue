@@ -16,7 +16,9 @@ interface ChartData {
   value: any[];
 }
 
-@Component
+@Component({
+  name: 'barCharts',
+})
 export default class BarCharts extends Mixins(minixCharts) {
   @Prop({ default: () => 'chart' + Math.random() }) private id!: string;
   @Prop(String) private className!: string;

@@ -1,7 +1,9 @@
 <template>
   <div class="_showCase">
+
+    
     <rotate-card v-for="(item, k) of statistics" :key="k">
-      <template slot="front">
+      <template v-slot:front>
         <div class="card-front">
           <el-row>
             <el-col :span="8" class="photo">
@@ -11,7 +13,7 @@
           </el-row>
         </div>
       </template>
-      <template slot="back">
+      <template v-slot:back>
         <div class="card-back">
           <div class="show-charts" @click="handleShowCharts"><svg-icon icon-class="showCharts"></svg-icon></div>
         </div>

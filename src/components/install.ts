@@ -7,10 +7,12 @@ import SvgIcon from './SvgIcon.vue';
 import LoadingPage from './loading/Default.vue';
 import MaterialInput from './form/MaterialInput.vue';
 
-Vue.component(PagingCard.name, PagingCard);
-Vue.component(RotateCard.name, RotateCard);
-Vue.component(LineCharts.name, LineCharts);
-Vue.component(BarCharts.name, BarCharts);
-Vue.component(SvgIcon.name, SvgIcon);
-Vue.component('LoadingPage', LoadingPage);
-Vue.component(MaterialInput.name, MaterialInput);
+console.log((RotateCard as any).options.name);
+
+Vue.component((PagingCard as any).options.name, PagingCard);
+Vue.component((RotateCard as any).options.name, RotateCard);
+Vue.component((LineCharts as any).options.name, LineCharts);
+Vue.component((BarCharts as any).options.name, BarCharts);
+Vue.component((SvgIcon as any).options.name, SvgIcon);
+Vue.component((LoadingPage as any).options.name, LoadingPage);
+Vue.component((MaterialInput as any).options.name, MaterialInput);

@@ -5,6 +5,7 @@ function resolve(dir) {
 }
 
 module.exports = {
+  publicPath: './',
   css: {
     requireModuleExtension: false
   },
@@ -33,11 +34,11 @@ module.exports = {
   },
   devServer: {
     hot: false,
+    port: 9001,
     inline: false,
     // https: true,
     disableHostCheck: true,
   },
-
   pages: {
     index: {
       // 入口
@@ -58,7 +59,6 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        //resolve('./src/assets/less/global.less'),
         resolve('./src/assets/less/main.less')
       ]
     }

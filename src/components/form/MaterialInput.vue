@@ -17,7 +17,9 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
-@Component
+@Component({
+  name: 'materialInput',
+})
 export default class MaterialInput extends Vue {
   @Prop(String) private title!: string;
   @Prop(String) private titleWidth!: string;

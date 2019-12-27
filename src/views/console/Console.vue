@@ -49,6 +49,7 @@ export default class Console extends Vue {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding: 10px 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import defaultLayout from '@/layout/Default.vue';
-import store from '@/store/index.ts';
+import store from '@/store/index';
 const Home = () => import('@/views/home/Home.vue');
 const Console = () => import('@/views/console/Console.vue');
 const Notfound = () => import('@/layout/NotFound.vue');

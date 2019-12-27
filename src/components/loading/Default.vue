@@ -1,7 +1,7 @@
 <template>
   <div class="_loading">
     <transition name="fade">
-      <div class="loader" v-if="loadingShow || pageLoading">
+      <div class="loader" v-if="loadingShow && pageLoading">
         <div class="loader-inner">
           <div class="loader-line-wrap">
             <div class="loader-line"></div>
@@ -29,7 +29,9 @@
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 
-@Component
+@Component({
+  name: 'loadingPage',
+})
 export default class DeaultLoadibg extends Vue {
   @Prop({
     type: Boolean,

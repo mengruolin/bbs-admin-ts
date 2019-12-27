@@ -14,10 +14,10 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
-@Component
-export default class RotateCard extends Vue {
-  public name: string = 'routateCard';
-}
+@Component({
+  name: 'rotateCard',
+})
+export default class RotateCard extends Vue {}
 </script>
 
 <style lang="less" scoped>
