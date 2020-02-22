@@ -1,9 +1,14 @@
 <template>
   <div>
     <el-row class="_header">
-      <el-col :span="12" class="menu">
-        <span v-if="!isCollapse" @click="handleCloseSlider"><i class="el-icon-s-fold" alt="收起" /></span>
-        <span v-else @click="handleOpenSlider"><i class="el-icon-s-unfold" alt="展开" /></span>
+      <el-col :span="12" class="headLeft">
+        <div class="menu-icon">
+          <span v-if="!isCollapse" @click="handleCloseSlider"><i class="el-icon-s-fold" alt="收起" /></span>
+          <span v-else @click="handleOpenSlider"><i class="el-icon-s-unfold" alt="展开" /></span>
+        </div>
+        <div class="breadcrumb">
+          <Breadcrumb />
+        </div>
       </el-col>
       <el-col :span="12" class="user-info">
         <el-dropdown trigger="click" class="avatar-swiper">
@@ -26,8 +31,13 @@
 
 <script lang="ts">
 import { Vue, Prop, Component, Emit } from 'vue-property-decorator';
+import Breadcrumb from './Breadcrumb.vue';
 
-@Component
+@Component({
+  components: {
+    Breadcrumb,
+  },
+})
 export default class Heard extends Vue {
   @Prop({
     type: Boolean,
@@ -75,17 +85,26 @@ export default class Heard extends Vue {
   .el-col {
     height: 100%;
   }
-  .menu {
-    span {
-      height: 100%;
-      display: block;
+  .headLeft {
+    display: flex;
+    .menu-icon {
+      width: 60px;
+      overflow: hidden;
+      span {
+        height: 100%;
+        display: block;
+      }
+      i {
+        font-size: 28px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
     }
-    i {
-      font-size: 28px;
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translate(0, -50%);
+    .breadcrumb {
+      position: relative;
+      flex: 1;
     }
   }
   .user-info {

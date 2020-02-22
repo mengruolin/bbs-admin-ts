@@ -61,6 +61,16 @@ export default class Aside extends Vue {
   get activeIndex(): string {
     return this.$route.path;
   }
+
+  // 重载当前路由生命周期
+  // private clickNavList(path: string): void {
+  //   this.$router.push({
+  //     path,
+  //     query: {
+  //       t: Date(),
+  //     },
+  //   });
+  // }
 }
 </script>
 
