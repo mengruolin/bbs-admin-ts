@@ -6,11 +6,11 @@
       </el-form-item>
 
       <el-form-item>
-        <material-input title="账号：" v-model="userName" type="text"></material-input>
+        <material-input title="账号：" v-model="username" type="text"></material-input>
       </el-form-item>
 
       <el-form-item>
-        <material-input title="密码：" v-model="passWord" type="password"></material-input>
+        <material-input title="密码：" v-model="password" type="password"></material-input>
       </el-form-item>
 
       <el-form-item class="_valid-box">
@@ -27,30 +27,43 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Action } from 'vuex-class';
 
 interface FormData {
-  userName: string;
-  passWord: string;
+  username: string;
+  password: string;
   validNumber: string;
 }
 
 @Component
 export default class Login extends Vue {
-  private userName: string = '';
-  private passWord: string = '';
-  private validNumber: string = '';
-  private validBtnTitle: string = '发送验证码';
+  private username: string = ''
+  private password: string = ''
+  private validNumber: string = ''
+  private validBtnTitle: string = '发送验证码'
+
+  @Action('login') private login!: (params: object) => void
 
   get loginForm(): FormData {
     return {
-      userName: '',
-      passWord: '',
+      username: this.username,
+      password: this.password,
       validNumber: '',
-    };
+    }
   }
 
-  private handleLogin(): void {
-    console.log(this.userName);
+  private async handleLogin() {
+    if (!this.username || !this.password) {
+      return this.$message.warning('请输入用户名和密码')
+    }
+    const res: any = await this.login(this.loginForm)
+    if (res.code !== '0') {
+      return this.$message.error(res.msg)
+    }
+
+    this.$message.success('登陆成功')
+    window.localStorage.setItem('token', `Bearer ${res.access_token}`)
+    this.$router.push('/')
   }
 }
 </script>
@@ -69,7 +82,8 @@ export default class Login extends Vue {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+  background-color: rgb(139, 136, 136);
+  //background: linear-gradient(to right, #1c92d2, #f2fcfe);
   // animation: bgAnimation 3s infinite;
   // .randomColor();
   ._form {
@@ -81,10 +95,10 @@ export default class Login extends Vue {
     right: 0;
     bottom: 0;
     margin: auto;
-    background: rgba(0, 0, 0, .1);
-    border: seagreen solid 1px;
+    background: rgba(255, 255, 255, 0);
+    //border: #e2e2e2 solid 1px;
     border-radius: 12px;
-    box-shadow: 5px 5px 5px rgb(67, 118, 141); /// ===========>
+    //box-shadow: 5px 5px 5px rgb(67, 118, 141); /// ===========>
     .el-form-item {
       width: 300px;
       margin: 0 auto;

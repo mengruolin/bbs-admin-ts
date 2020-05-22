@@ -30,9 +30,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 
 @Component({
-  name: 'loadingPage',
+  name: 'LoadingPage',
 })
-export default class DeaultLoadibg extends Vue {
+export default class LoadingPage extends Vue {
   @Prop({
     type: Boolean,
     default: () => false,
@@ -44,12 +44,12 @@ export default class DeaultLoadibg extends Vue {
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 ._loading {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
-  padding: 20px 20px;
+  padding: 10px 10px;
   overflow: hidden;
   box-sizing: border-box;
 }

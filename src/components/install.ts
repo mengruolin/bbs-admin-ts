@@ -4,7 +4,7 @@ import RotateCard from './card/RotateCard.vue';
 import LineCharts from './charts/LineCharts.vue';
 import BarCharts from './charts/BarCharts.vue';
 import SvgIcon from './SvgIcon.vue';
-import LoadingPage from './loading/Default.vue';
+import LoadingPage from './loading/LoadingPage.vue';
 import MaterialInput from './form/MaterialInput.vue';
 
 console.log((RotateCard as any).options.name);

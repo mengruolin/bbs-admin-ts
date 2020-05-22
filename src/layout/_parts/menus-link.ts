@@ -3,7 +3,7 @@ export const menusUrl: StrObject = {
   '62e5iotude8c78of9pql88': '/console',
   '3592ul476doe0rph9msdoo': '/console',
   's2t2uctr658fulibp45qmo': '/console',
-  'md81fj3ghk8joo41j6uvl8': '/console',
+  'md81fj3ghk8joo41j6uvl8': '/feedback',
   'ev8shoj3abg7g236jm9ghg': '/console',
   'etasf7puqbo_k193ej5jha': '/console',
   '8ptufrd89f8q8g3bl72q7g': '/console',

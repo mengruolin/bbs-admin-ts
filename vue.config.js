@@ -28,7 +28,7 @@ module.exports = {
       vue: 'window.Vue',
       vuex: 'window.Vuex',
       'vue-router': 'window.VueRouter',
-      'element-ui': 'window.Element',
+      // 'element-ui': 'window.Element',
       'echarts': 'window.echarts',
     },
   },
@@ -38,6 +38,11 @@ module.exports = {
     inline: false,
     // https: true,
     disableHostCheck: true,
+    proxy: {
+      '/api': {
+        target: process.env.VUE_PROXY_URL
+      }
+    }
   },
   pages: {
     index: {

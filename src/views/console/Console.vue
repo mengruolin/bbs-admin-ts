@@ -21,7 +21,8 @@ import ShowCase from './_parts/ShowCase.vue';
 import PrivateMessage from './_parts/PrivateMessage.vue';
 import ChartsPanel from './_parts/ChartsPanel.vue';
 import ConsoleInfo from './_parts/ConsoleInfo.vue';
-import { Action } from 'vuex-class';
+import { Action, Getter } from 'vuex-class';
+import axios from 'axios';
 
 @Component({
   components: {
@@ -33,10 +34,14 @@ import { Action } from 'vuex-class';
 })
 export default class Console extends Vue {
   public name: string = 'Console';
-  @Action('showLoading') private showLoading!: () => void;
+  @Action('showLoading') private showLoading!: () => void
+  @Action('getConsoleInfo') private getConsoleInfo!: () => void
+  @Getter('consoleInfo') private consoleInfo!: [];
 
-  private mounted(): void {
+  private async mounted() {
     this.showLoading();
+    await this.getConsoleInfo()
+    console.log(this.consoleInfo)
   }
 }
 </script>

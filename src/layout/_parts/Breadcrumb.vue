@@ -1,6 +1,6 @@
 <template>
   <el-breadcrumb separator="/" class="breadcrumb">
-    <el-breadcrumb-item :to="{ path: '/' }">。。。</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/' }">😊😊😊</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 

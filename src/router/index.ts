@@ -1,14 +1,15 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import defaultLayout from '@/layout/Default.vue';
-import store from '@/store/index';
-const Home = () => import('@/views/home/Home.vue');
-const Console = () => import('@/views/console/Console.vue');
-const Notfound = () => import('@/layout/NotFound.vue');
-const Qasons = () => import('@/views/qaConfig/qaSons/QaSons.vue');
-const Login = () => import('@/views/login/Login.vue');
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import defaultLayout from '@/layout/Default.vue'
+import store from '@/store/index'
+const Home = () => import('@/views/home/Home.vue')
+const Console = () => import('@/views/console/Console.vue')
+const Notfound = () => import('@/layout/NotFound.vue')
+const Qasons = () => import('@/views/queryConfig/qaSons/index.vue')
+const Login = () => import('@/views/login/Login.vue')
+const Feedback = () => import('@/views/feedBack/index.vue')
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes: RouteConfig[] = [
   {
@@ -16,6 +17,11 @@ const routes: RouteConfig[] = [
     name: 'defaultLayout',
     component: defaultLayout,
     children: [
+      {
+        path: '/',
+        name: 'index',
+        component: Console,
+      },
       {
         path: '/console',
         name: 'console',
@@ -30,6 +36,11 @@ const routes: RouteConfig[] = [
         path: '/qaSons',
         name: 'qaSons',
         component: Qasons,
+      },
+      {
+        path: 'feedback',
+        name: 'feedback',
+        component: Feedback,
       },
     ],
   },
@@ -46,6 +57,7 @@ const routes: RouteConfig[] = [
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 

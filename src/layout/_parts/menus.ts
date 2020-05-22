@@ -73,7 +73,7 @@ const menus: IMenus = {
       reskey: 'md81fj3ghk8joo41j6uvl8',
       resourcesType: 0,
       resourcesName: '用户反馈',
-      resourceUrl: 'other',
+      resourceUrl: 'feedback',
       own: 0,
     },
     {
