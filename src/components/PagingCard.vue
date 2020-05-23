@@ -29,9 +29,10 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { Carousel } from 'element-ui';
 
-@Component
+@Component({
+  name: 'pagingCard',
+})
 export default class PagingCard extends Vue {
-  public name: string = 'pagingCard';
   private pageIndex: number = 0;
 
   @Prop({
@@ -96,6 +97,7 @@ export default class PagingCard extends Vue {
     height: 50px;
     border-bottom: #cccccc solid 1px;
     display: flex;
+    z-index: 1;
     ._title {
       flex: 1;
       overflow: hidden;

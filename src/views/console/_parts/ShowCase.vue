@@ -1,27 +1,25 @@
 <template>
-  <paging-card :slotNames="slotNames" title="数据统计">
-    <template slot="aa">
-      <div class="showCase">
-          <rotate-card v-for="(item, k) of statistics" :key="k">
-            <template slot="front">
-              <div class="card-front">
-                <el-row>
-                  <el-col :span="8" class="photo">{{ item.label }}</el-col>
-                  <el-col :span="16" class="content">{{ item.content }}</el-col>
-                </el-row>
-              </div>
-            </template>
-            <template slot="back">
-              <div class="card-back">
-                查看详细数据统计
-              </div>
-            </template>
-          </rotate-card>
-      </div>
-    </template>
-    <template slot="bb">2</template>
-  </paging-card>
-  <!--  -->
+  <div class="_showCase">
+
+    
+    <rotate-card v-for="(item, k) of statistics" :key="k">
+      <template v-slot:front>
+        <div class="card-front">
+          <el-row>
+            <el-col :span="8" class="photo">
+              <svg-icon :icon-class="item.svgName"></svg-icon>
+            </el-col>
+            <el-col :span="16" class="content">{{ item.title }}：{{ item.value }}</el-col>
+          </el-row>
+        </div>
+      </template>
+      <template v-slot:back>
+        <div class="card-back">
+          <div class="show-charts" @click="handleShowCharts"><svg-icon icon-class="showCharts"></svg-icon></div>
+        </div>
+      </template>
+    </rotate-card>
+  </div>
 </template>
 
 <script lang="ts">
@@ -31,23 +29,30 @@ import { Getter } from 'vuex-class';
 @Component
 export default class ShowCase extends Vue {
   private slotNames: string[] = ['aa', 'bb'];
+  private showCharts: boolean = false;
 
   @Getter private statistics!: [];
+
+  private handleCloseCharts() {
+    this.showCharts = false;
+  }
+
+  private handleShowCharts() {
+    this.showCharts = true;
+  }
 }
 </script>
 
 <style lang="less" scoped>
-@gridWidth: calec( 33.3% - 20px );
-
-.showCase {
+._showCase {
   width: 100%;
   height: 100%;
+  position: relative;
+  padding: 0 5px 5px 0;
   box-sizing: border-box;
-  padding: 10px 5px 5px 5px;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   .card-front {
@@ -59,7 +64,6 @@ export default class ShowCase extends Vue {
       padding: 0 0;
       .photo {
         height: 100%;
-        background: linear-gradient(to right, #114357, #f29492);
       }
       .content {
         padding: 10px 10px;
@@ -77,8 +81,13 @@ export default class ShowCase extends Vue {
     width: 100%;
     text-align: center;
     color: #f29492;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(192, 188, 188, 0.1);
+    //position: relative;
+    .show-charts {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
   }
 }
-
 </style>

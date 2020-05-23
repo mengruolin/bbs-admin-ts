@@ -14,10 +14,10 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
-@Component
-export default class RotateCard extends Vue {
-  public name: string = 'routateCard';
-}
+@Component({
+  name: 'rotateCard',
+})
+export default class RotateCard extends Vue {}
 </script>
 
 <style lang="less" scoped>
@@ -46,6 +46,7 @@ export default class RotateCard extends Vue {
 
   .flipper {
     transition: 1.5s;
+    transition-delay: .5s;
     transform-style: preserve-3d;
     position: relative;
     width: 100%;

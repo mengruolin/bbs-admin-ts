@@ -1,12 +1,15 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import defaultLayout from '@/layout/Default.vue';
-const Home = () => import('@/views/home/Home.vue');
-const Console = () => import('@/views/console/Console.vue');
-const Notfound = () => import('@/layout/NotFound.vue');
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import defaultLayout from '@/layout/Default.vue'
+import store from '@/store/index'
+const Home = () => import('@/views/home/Home.vue')
+const Console = () => import('@/views/console/Console.vue')
+const Notfound = () => import('@/layout/NotFound.vue')
+const Qasons = () => import('@/views/queryConfig/qaSons/index.vue')
+const Login = () => import('@/views/login/Login.vue')
+const Feedback = () => import('@/views/feedBack/index.vue')
 
-
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes: RouteConfig[] = [
   {
@@ -16,23 +19,35 @@ const routes: RouteConfig[] = [
     children: [
       {
         path: '/',
-        name: 'Console',
+        name: 'index',
+        component: Console,
+      },
+      {
+        path: '/console',
+        name: 'console',
         component: Console,
       },
       {
         path: '/home',
-        name: 'Home',
+        name: 'home',
         component: Home,
+      },
+      {
+        path: '/qaSons',
+        name: 'qaSons',
+        component: Qasons,
+      },
+      {
+        path: 'feedback',
+        name: 'feedback',
+        component: Feedback,
       },
     ],
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
   {
     path: '*',
@@ -42,7 +57,13 @@ const routes: RouteConfig[] = [
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  store.commit('closePageLoading');
+  next();
 });
 
 export default router;

@@ -5,25 +5,45 @@ function resolve(dir) {
 }
 
 module.exports = {
+  publicPath: './',
   css: {
     requireModuleExtension: false
+  },
+  chainWebpack: config => {
+    config.module.rules.delete("svg");
+    config.module
+      .rule('svg-sprite-loader')
+      .test(/\.svg$/)
+      .include
+      .add(resolve('src/assets/svg/')) //处理svg目录
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
   },
   configureWebpack: {
     externals: {
       vue: 'window.Vue',
       vuex: 'window.Vuex',
       'vue-router': 'window.VueRouter',
-      'element-ui': 'window.Element',
-      'roughViz': 'window.roughViz',
+      // 'element-ui': 'window.Element',
+      'echarts': 'window.echarts',
     },
   },
   devServer: {
     hot: false,
+    port: 9001,
     inline: false,
     // https: true,
     disableHostCheck: true,
+    proxy: {
+      '/api': {
+        target: process.env.VUE_PROXY_URL
+      }
+    }
   },
-
   pages: {
     index: {
       // 入口
@@ -44,7 +64,6 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        //resolve('./src/assets/less/global.less'),
         resolve('./src/assets/less/main.less')
       ]
     }
